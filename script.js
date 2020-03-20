@@ -30,7 +30,7 @@ function passCriteria() {
 
 }
 
-
+//function to randomize which character gets chosen in the above character arrays
 function getRandom(arr) {
   var randIndex = Math.floor(Math.random() * arr.length);
   var randElement = arr[randIndex];
@@ -62,56 +62,27 @@ function getRandom(arr) {
     if(userSelection.Special && password.length < userSelection.passwordLength){
       password.push(getRandom(specialCharacters))
     }
-   
-
 
    }
-    
+   
+
    let  passwordString = '';
    password.forEach(x => {
     passwordString += x;
    })
 
-
+// write the password to the DOM
     var passText = document.querySelector("#password");
     passText.innerHTML = passwordString;
 
 
 }
 
-var generateBtn = document.querySelector("#generate");
+
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
+var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePass);
 
 
 
-
-
-//function that generates random characters
-//function should generate random characters based on Object criteria
-
-
-
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  
-  passwordText.value = password; 
-
-}
-
-
-
-
-//click button
-//prompt user how long they want their password to be (between 8 and 128 characters)
-//prompt user if they want lowercase letters
-//prompt user if they want uppercase letters
-//prompt user if they want numeric characters
-//prompt user if they want special characters
-//validate that the user chose at least 1 character type - if not.. 
-//alert user and start question prompts over
-//generate password that matches selected criteria
-//display generated password on the screen
