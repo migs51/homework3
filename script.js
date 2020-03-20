@@ -14,16 +14,24 @@ var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
 //function to get user input
 function passCriteria() {
   var passwordLength = prompt("choose the length of your password between 8 and 128 characters");
+    if (passwordLength < 8 || passwordLength> 128){
+      alert("Password length MUST be between 8 and 128 characters!!!!!");
+    }
+    else{
   var lowercase = confirm("Press OK if you want lowercase letters in your password");
-  var uppercase = confirm("do you want uppcase letters in your password")
-  var numeric = confirm("do you want numbers in your password")
-  var special = confirm("do you want special characters like !$# in your password?")
+  var uppercase = confirm("Press OK if you want uppercase letters in your password");
+  var numeric = confirm("Press OK if you want numbers in your password");
+  var special = confirm("Press OK if you want special characters like '!$#' in your password?");
+    }
+    if (lowercase === false && uppercase === false && numeric === false && special === false){
+      alert("You must select at least 1 criteria for your password!!!");
+    }
 
   return {
     passwordLength :passwordLength,
     Lowercase: lowercase,
     UpperCase: uppercase,
-    Numeric: numeric,
+    Numeric: numeric, 
     Special: special
   }
 
