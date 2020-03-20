@@ -40,7 +40,6 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
-* screenshot of the application:
 
-![password generator demo](./images/screenshot.png)
+![screenshot of the application](https://github.com/mmejares/homework3/blob/master/images/screenshot.PNG)
 
