@@ -66,6 +66,7 @@ function getRandom(arr) {
    }
    
 
+   //convert password array into string
    let  passwordString = '';
    password.forEach(x => {
     passwordString += x;
@@ -80,7 +81,7 @@ function getRandom(arr) {
 
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// click event on button to inititaive generatePass function 
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePass);
 
