@@ -14,6 +14,8 @@ var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
 //function to get user input
 function passCriteria() {
   var passwordLength = prompt("choose the length of your password between 8 and 128 characters");
+
+  //conditional statment to ensure password is between 8 and 128 characters in length
     if (passwordLength < 8 || passwordLength> 128){
       alert("Password length MUST be between 8 and 128 characters!!!!!");
     }
@@ -23,6 +25,7 @@ function passCriteria() {
   var numeric = confirm("Press OK if you want numbers in your password");
   var special = confirm("Press OK if you want special characters like '!$#' in your password?");
     }
+    //conditional statement to ensure that at least 1 criteria is selected
     if (lowercase === false && uppercase === false && numeric === false && special === false){
       alert("You must select at least 1 criteria for your password!!!");
     }
@@ -46,13 +49,12 @@ function getRandom(arr) {
   return randElement;
 }
 
-
    //Function to generate random password based on user criteria
    function generatePass(){
 
-    let userSelection = passCriteria();
+    var userSelection = passCriteria();
    
-    let password =[]
+    var password =[]
    for(i=1; i <= userSelection.passwordLength; i++){
 
     if(userSelection.Lowercase && password.length < userSelection.passwordLength ){
@@ -75,7 +77,7 @@ function getRandom(arr) {
    
 
    //convert password array into string
-   let  passwordString = '';
+   var  passwordString = '';
    password.forEach(x => {
     passwordString += x;
    })
